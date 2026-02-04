@@ -8,7 +8,6 @@ class GhostTab < Formula
   depends_on "tmux"
   depends_on "lazygit"
   depends_on "broot"
-  depends_on "claude-code"
   depends_on "node@22"
   depends_on :macos
 
@@ -19,9 +18,9 @@ class GhostTab < Formula
 
   def caveats
     <<~EOS
-      Ghostty terminal is required but not installed automatically.
-      Install it with:
+      These casks are required but not installed automatically:
         brew install --cask ghostty
+        brew install --cask claude
 
       Then run `ghost-tab` to set up your environment.
     EOS
