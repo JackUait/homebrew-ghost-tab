@@ -1,8 +1,8 @@
 class GhostTab < Formula
   desc "Ghostty + tmux wrapper for AI-assisted development with Claude Code"
   homepage "https://github.com/JackUait/ghost-tab"
-  url "https://github.com/JackUait/ghost-tab/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "3ed4f2eb5371b8138f8960a9ecb4eeee2a790e6eaf0ef07a2886dc31a24fe646"
+  url "https://github.com/JackUait/ghost-tab/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "197e2ae5d6cdea62a64d65ee513a757ecc0a8a4b86d1dc051cf7e6bdb76d2fa0"
   license "MIT"
 
   depends_on "tmux"
