@@ -17,13 +17,22 @@ class GhostTab < Formula
   end
 
   def caveats
-    <<~EOS
-      These casks are required but not installed automatically:
-        brew install --cask ghostty
-        brew install --cask claude
+    missing = []
+    missing << "  brew install --cask ghostty" unless Dir.exist?("/Applications/Ghostty.app")
+    missing << "  brew install --cask claude" unless system("command -v claude >/dev/null 2>&1")
 
-      Then run `ghost-tab` to set up your environment.
-    EOS
+    if missing.empty?
+      <<~EOS
+        All dependencies installed. Run `ghost-tab` to set up your environment.
+      EOS
+    else
+      <<~EOS
+        These casks are required but not installed automatically:
+        #{missing.join("\n")}
+
+        Then run `ghost-tab` to set up your environment.
+      EOS
+    end
   end
 
   test do
