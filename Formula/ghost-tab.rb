@@ -19,7 +19,7 @@ class GhostTab < Formula
   def caveats
     missing = []
     missing << "  brew install --cask ghostty" unless Dir.exist?("/Applications/Ghostty.app")
-    missing << "  brew install --cask claude" unless system("command -v claude >/dev/null 2>&1")
+    missing << "  brew install --cask claude" unless File.exist?("/opt/homebrew/bin/claude") || File.exist?("/usr/local/bin/claude")
 
     if missing.empty?
       <<~EOS
